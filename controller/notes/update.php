@@ -3,7 +3,7 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 $database = App::resolve(Database::class);
-$currentUser=1;
+$currentUser= $_SESSION['user']['id'];
 $errors=[];
 $heading = 'edit your note....';
 $note = $database->query('select * from notes where id = :id', ['id'=> $_POST['id']])->findOrFail();

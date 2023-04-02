@@ -6,4 +6,4 @@
     <script  src="https://cdn.tailwindcss.com?plugins=forms"></script>
 </head>
 <body class="h-full">
-<div class="min-h-full mx-auto max-w-7xl">
+<div class="min-h-full">

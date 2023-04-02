@@ -26,13 +26,11 @@ if (count($errors)) {
 }
 
 if (empty($errors)) {
-    $database->query('INSERT INTO users(email, password) VALUES(:email, :password)',[
+    $user =$database->query('INSERT INTO users(email, password) VALUES(:email, :password)',[
         'email'=>$email,
         'password'=>password_hash($password,PASSWORD_BCRYPT) ,
     ]);
-    $_SESSION['user']=[
-        'email'=>$email
-    ];
+    $_SESSION['user']=$user;
     header('location: /');
     exit();
 }

@@ -14,7 +14,7 @@ if (Validator::string($_POST['body'], 1, 1000)) {
         'INSERT INTO `myapp`.`notes` (`body`, `user_id`) VALUES (:body ,:id)',
         [
             'body' => $_POST['body'],
-            'id' => 1
+            'id' => $_SESSION['user']['id']
         ]
     );
     header('location: /notes');
